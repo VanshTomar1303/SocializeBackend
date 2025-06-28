@@ -1,0 +1,97 @@
+# 📱 Socialize Backend
+
+A powerful and scalable backend for the **Socialize** social media app, built using **Kotlin**, **Spring Boot**, **PostgreSQL**, and **Spring Security**.
+
+## 🚀 Features
+
+- ✅ User authentication with JWT
+- 🔐 Secure login and role-based access using Spring Security
+- 🗃️ PostgreSQL integration for persistent storage
+- 👥 User registration & login
+- 📄 JSON-based REST APIs
+- 🔄 Token validation & refresh logic
+- 🌍 CORS enabled for frontend integration
+- 🧪 Structured project for scalability and testing
+
+---
+
+## ⚙️ Tech Stack
+
+| Tech              | Description                        |
+|------------------|------------------------------------|
+| Kotlin            | Main programming language          |
+| Spring Boot       | Web framework                      |
+| Spring Security   | Authentication and authorization   |
+| PostgreSQL        | Relational database                |
+| JWT               | Secure token-based authentication  |
+| Gradle            | Build tool                         |
+
+---
+
+## 📁 Project Structure
+
+src/
+├── config/ # JWT and WebSecurity configuration
+├── controller/ # REST controllers for Auth and Admin
+├── dto/ # Data transfer objects
+├── entity/ # JPA entity classes
+├── repo/ # Spring Data JPA repositories
+├── security/ # JWT filter and utility classes
+├── service/ # Business logic layer
+└── SocializeBackend.kt # Main application entry
+
+## 🧪 Getting Started
+
+### Prerequisites
+
+- Java 17+
+- Kotlin
+- Gradle
+- PostgreSQL
+- IDE (IntelliJ recommended)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/VanshTomar1303/SocializeBackend.git
+cd SocializeBackend
+
+Configure PostgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/socialize
+spring.datasource.username=your_db_username
+spring.datasource.password=your_db_password
+
+spring.jpa.hibernate.ddl-auto=update
+jwt.secret=your_jwt_secret
+
+🔐 Authentication Flow
+Register: POST /auth/register
+Login: POST /auth/login
+Protected routes require Authorization: Bearer <token>
+
+🔄 API Endpoints Overview :: some endpoint will come soon
+| Method | Endpoint             | Description                    |
+| ------ | -------------------- | ------------------------------ |
+| POST   | `/auth/register`     | Register a new user            |
+| POST   | `/auth/login`        | Login user and receive JWT     |
+| GET    | `/admin/users`       | List users (Admin only)        |
+| POST   | `/admin/update-role` | Change a user's role           |
+| GET    | `/auth/user`         | Get authenticated user details |
+| -------------------- | ------ | ------------------------------------ |
+| `/auth/register`     | POST   | Register a new user                  |
+| `/auth/login`        | POST   | Log in a user                        |
+| `/users/:id`         | GET    | Get user profile                     |
+| `/posts`             | GET    | List all posts (with pagination)     |
+| `/posts`             | POST   | Create a new post                    |
+| `/posts/:id`         | GET    | Get a post by ID                     |
+| `/posts/:id`         | PUT    | Update a post                        |
+| `/posts/:id`         | DELETE | Delete a post                        |
+| `/posts/:id/like`    | POST   | Like a post                          |
+| `/posts/:id/comment` | POST   | Comment on a post                    |
+| `/users/:id/follow`  | POST   | Follow/unfollow a user               |
+| `/notifications`     | GET    | Get authenticated user notifications |
+
+👨‍💻 Author
+Vansh Tomar
+Full Stack Developer • Kotlin & Spring Boot Enthusiast
+GitHub: @VanshTomar1303
